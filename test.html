@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Subscribe/Unsubscribe Button Toggle</title>
+    <style>
+      .btn {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        border-radius: 20px;
+      }
+      .btn.active {
+        background-color: #7ad4fa; /* Light Blue */
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn" data-state="false">Subscribe</button>
+    <script>
+      const btn = document.querySelector('.btn');
+      btn.addEventListener('click', () => {
+        const currentState = btn.getAttribute('data-state');
+        if (currentState === 'false') {
+          btn.textContent = 'Unsubscribe';
+          btn.setAttribute('data-state', 'true');
+          btn.classList.add('active');
+        } else {
+          btn.textContent = 'Subscribe';
+          btn.setAttribute('data-state', 'false');
+          btn.classList.remove('active');
+        }
+      });
+    </script>
+  </body>
+</html>
