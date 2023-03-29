@@ -9,8 +9,20 @@ module.exports = {
   },
 
   entry: { // 중요!
-    app:['./client,jsx', 'WordRelay.jsx'], // resolve에서 .js와 .jsx를 설정 하였으므로 .jsx는 생략해도 무관하다.
+    app: ['./client'], // resolve에서 .js와 .jsx를 설정 하였으므로 .jsx는 생략해도 무관하다.
   }, // 입력
+
+  module: {
+    rules: [{
+      test: /\.jsx?/,
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env', '@babel/preset-react'],
+        plugins: ['@babel/plugin-proposal-class-properties'],
+      },
+    }],
+  },
+
   output: { // 중요!
     path: path.join(__dirname, 'dist'), // __dirname은 현재 폴더 'lecture'을 가리킴. 즉, lecture 안에 있는 dist를 가리킨다.
     filename: 'app.js'
