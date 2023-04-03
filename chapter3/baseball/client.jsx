@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-import Baseball from './baseball';
+import NumberBaseball from './NumberBaseball';
 
-ReactDom.render(<Baseball />, document.querySelector('#root'));
+ReactDom.render(<NumberBaseball />, document.querySelector('#root'));
+
+// 6 x
+// 
