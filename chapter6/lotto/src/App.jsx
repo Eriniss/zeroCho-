@@ -15,6 +15,7 @@ function getWinNumbers() {
 }
 
 const Lotto = () => {
+  // useMemo를 사용해 캐싱(기억)한다. 두번째 인자로 배열을 받으며 배열값이 변하면 콜백함수를 다시 실행한다.
   const lottoNumbers = useMemo(() => getWinNumbers(), []);
   const [winNumbers, setWinNumbers] = useState(lottoNumbers); // 7개의 숫자를 디폴트값으로 설정
   const [winBalls, setWinBalls] = useState([]);
